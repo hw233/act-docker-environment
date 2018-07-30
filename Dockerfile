@@ -1,5 +1,5 @@
 FROM centos:7
-RUN yum update -y && yum install -y epel-release make gcc gcc-c++ libffi-devel python-devel openssl-devel python-setuptools && yum install -y python-pip mysql-devel supervisor iproute && pip install --upgrade pip && pip install MySQL-python==1.2.5 && pip install twisted==13.2.0 && pip install pyzmq txZMQ 
+RUN yum update -y && yum install -y epel-release make gcc gcc-c++ libffi-devel python-devel openssl-devel python-setuptools && yum install -y python-pip mysql-devel supervisor iproute unzip && pip install --upgrade pip && pip install MySQL-python==1.2.5 && pip install twisted==13.2.0 && pip install autobahn[twisted] && pip install requests && pip install pyzmq txZMQ 
 ADD https://github.com/google/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz 
 RUN tar -zxvf protobuf-2.5.0.tar.gz
 RUN rm -rf protobuf-2.5.0.tar.gz
